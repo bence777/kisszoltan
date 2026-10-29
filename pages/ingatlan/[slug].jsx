@@ -8,7 +8,7 @@ import {Header,Footer,ImageWithFallback,PropertyCard} from '../../components/Glo
 import {useApp,track} from '../../components/AppContext';
 import {properties,agents,fmtFt,fmtM} from '../../data/properties';
 import {currentProperties} from '../../lib/kz-content-store';
-import {SITE_URL,INDEXABLE} from '../../lib/seo';
+import {canonical} from '../../lib/seo';
 import {areaFacts,isPublicationApproved} from '../../data/propertyQuality';
 import PropertyPerspective from '../../components/PropertyPerspective';
 
@@ -20,7 +20,7 @@ function factsOf(p){return [
  ['Helyiségek',p.rooms?`${p.rooms} szoba`:null],['Fürdőszobák',p.bathrooms],['Ingatlantípus',p.type],
  ['Építés éve',p.builtYear],['Szintek',p.levels],['Parkolás',p.parking],['Azonosító',p.code]
  ].filter(([,value])=>value!==undefined&&value!==null&&value!==''&&value!=='Egyeztetendő')}
-function absoluteUrl(path){if(!path)return null;return /^https?:\/\//.test(path)?path:INDEXABLE?`${SITE_URL}${path}`:null}
+function absoluteUrl(path){if(!path)return null;return /^https?:\/\//.test(path)?path:canonical(path)}
 function groupImages(p){return (p.images||[]).filter(Boolean).map((photo,i)=>typeof photo==='string'?{src:photo,category:p.imageCategories?.[i]||'Fotók',alt:`${p.title} – ${i+1}. ingatlanfotó`}:{src:photo.src,category:photo.category||'Fotók',alt:photo.alt||`${p.title} – ${i+1}. ingatlanfotó`}).filter(x=>x.src)}
 function Gallery({p}){
  const pictures=useMemo(()=>groupImages(p),[p]);
@@ -67,7 +67,7 @@ export default function PropertyDetail({property:p}){
  const similar=useMemo(()=>properties.filter(x=>x.id!==p.id).map(x=>({x,score:(x.type===p.type?3:0)+(x.district===p.district&&x.district!==0?2:0)-Math.abs(Math.log(x.price/p.price))})).sort((a,b)=>b.score-a.score).slice(0,3).map(o=>o.x),[p]);
  const info=factsOf(p);const tech=(p.technical||[]).filter(([k,v])=>k&&v);
  const description=p.description||`${p.type} – ${p.location}`;
- const schema={"@context":"https://schema.org","@type":"RealEstateListing",name:p.title,description,url:INDEXABLE?`${SITE_URL}/ingatlan/${p.slug}`:undefined,image:p.images.map(photo=>absoluteUrl(typeof photo==='string'?photo:photo.src)).filter(Boolean),identifier:p.code,offers:{"@type":"Offer",price:p.price,priceCurrency:'HUF',availability:p.status==='Eladó'?'https://schema.org/InStock':'https://schema.org/SoldOut'},itemOffered:{"@type":p.type==='Penthouse'?'Apartment':'SingleFamilyResidence',name:p.title,numberOfRooms:p.rooms,...(areaFacts(p).verified?{floorSize:{"@type":"QuantitativeValue",value:p.size,unitCode:'MTK'}}:{}),address:{"@type":"PostalAddress",addressLocality:p.location.split(' · ')[0],addressCountry:'HU'}}};
+ const schema={"@context":"https://schema.org","@type":"RealEstateListing",name:p.title,description,url:canonical(`/ingatlan/${p.slug}`),image:p.images.map(photo=>absoluteUrl(typeof photo==='string'?photo:photo.src)).filter(Boolean),identifier:p.code,offers:{"@type":"Offer",price:p.price,priceCurrency:'HUF',availability:p.status==='Eladó'?'https://schema.org/InStock':'https://schema.org/SoldOut'},itemOffered:{"@type":p.type==='Penthouse'?'Apartment':'SingleFamilyResidence',name:p.title,numberOfRooms:p.rooms,...(areaFacts(p).verified?{floorSize:{"@type":"QuantitativeValue",value:p.size,unitCode:'MTK'}}:{}),address:{"@type":"PostalAddress",addressLocality:p.location.split(' · ')[0],addressCountry:'HU'}}};
  return <><SeoHead title={`${p.title} – ${p.location} | Kiss Zoltán`} description={`${description} Részletes ingatlanadatok és személyes megtekintéskérés. Azonosító: ${p.code}.`.slice(0,165)} path={`/ingatlan/${p.slug}`} image={absoluteUrl(p.images[0])} schemas={[schema]} robots={!isPublicationApproved(p)?'noindex,follow':undefined}/><Header/><main className="detail-main"><div className="container">
  <nav className="detail-breadcrumb" aria-label="Morzsanavigáció"><Link href="/">Főoldal</Link><span>/</span><Link href="/ingatlanjaim">Ingatlanjaim</Link><span>/</span><span aria-current="page">{p.code}</span></nav>
  <div className="detail-head"><div><div className="eyebrow">KISS ZOLTÁN · {p.code}</div><h1>{p.title}</h1><div className="detail-location"><Icon name="pin" size={17}/>{p.location}<span>·</span><span>{p.type}</span></div></div><div className="detail-head-actions"><button onClick={()=>toggleSaved(p.id)} aria-pressed={saved.includes(p.id)}><Icon name="heart" size={20} fill={saved.includes(p.id)?'currentColor':'none'}/>{saved.includes(p.id)?'Mentve':'Mentés'}</button><button onClick={()=>{if(navigator.share)navigator.share({title:p.title,url:location.href}).catch(()=>{});else navigator.clipboard?.writeText(location.href)}}><Icon name="share" size={19}/>Megosztás</button></div></div>

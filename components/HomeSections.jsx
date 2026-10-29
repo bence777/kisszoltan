@@ -47,13 +47,13 @@ return <section className="hero" id="top">
 <div className="intent-fields">
 <label>
 <span>KERÜLET</span>
-<select value={district} onChange={e=>setDistrict(e.target.value)}>
+<select aria-label="Kerület kiválasztása" value={district} onChange={e=>setDistrict(e.target.value)}>
 <option value="">Bármely kerület</option>{districtData.map(d=>
 <option key={d.id} value={d.id}>{d.name} kerület</option>)}</select>
 </label>
 <label>
 <span>INGATLAN TÍPUSA</span>
-<select value={type} onChange={e=>setType(e.target.value)}>
+<select aria-label="Ingatlantípus kiválasztása" value={type} onChange={e=>setType(e.target.value)}>
 <option value="">Bármilyen</option>
 <option>Villa</option>
 <option>Rezidencia</option>
@@ -62,13 +62,13 @@ return <section className="hero" id="top">
 </label>{tab==='seller'?<label>
 <span>ALAPTERÜLET</span>
 <div className="field-suffix">
-<input type="number" min="150" max="2500" value={area} onChange={e=>setArea(e.target.value)}/>
+<input aria-label="Alapterület négyzetméterben" type="number" min="150" max="2500" value={area} onChange={e=>setArea(e.target.value)}/>
 <span>m²</span>
 </div>
 </label>:<label>
 <span>MAXIMÁLIS KERET</span>
 <div className="field-suffix">
-<input type="number" min="250" max="5000" value={budget} onChange={e=>setBudget(e.target.value)}/>
+<input aria-label="Maximális keret millió forintban" type="number" min="250" max="5000" value={budget} onChange={e=>setBudget(e.target.value)}/>
 <span>M Ft</span>
 </div>
 </label>}<button className="btn btn-primary intent-submit" onClick={tab==='seller'?seller:buyer}>{tab==='seller'?'Online értékiránytű':`${count} ingatlan megtekintése`} <Icon name="arrow" size={19}/>
@@ -150,15 +150,15 @@ return <section id="ingatlanok" className="section listings-section">
 </select>
 </div>
 </div>{expanded&&<div className="expanded-filters">
-<label>Maximum ár <select value={filters.maxPrice||''} onChange={e=>setFilters(o=>({...o,maxPrice:Number(e.target.value)}))}>
+<label>Maximum ár <select aria-label="Maximum ingatlanár" value={filters.maxPrice||''} onChange={e=>setFilters(o=>({...o,maxPrice:Number(e.target.value)}))}>
 <option value="">Bármennyi</option>{[350,500,750,1000,2500,5000].map(n=>
 <option key={n} value={n*1e6}>{n} M Ft</option>)}</select>
 </label>
-<label>Minimum szobaszám <select value={minRooms} onChange={e=>setMinRooms(e.target.value)}>{[0,2,3,4,5].map(n=>
+<label>Minimum szobaszám <select aria-label="Minimum szobaszám" value={minRooms} onChange={e=>setMinRooms(e.target.value)}>{[0,2,3,4,5].map(n=>
 <option key={n} value={n}>{n||'Bármennyi'}</option>)}</select>
 </label>
 <label className="toggle-option">
-<input type="checkbox" checked={threeD} onChange={e=>setThreeD(e.target.checked)}/> 3D séta jelöléssel (ha elérhető)</label>
+<input aria-label="Csak 3D-sétával jelölt ingatlanok" type="checkbox" checked={threeD} onChange={e=>setThreeD(e.target.checked)}/> 3D séta jelöléssel (ha elérhető)</label>
 <button className="filter-reset" onClick={reset}>Szűrők törlése <Icon name="close" size={15}/>
 </button>
 </div>}<div className="listings-result">
@@ -390,14 +390,14 @@ return <section id="kapcsolat" className="section contact-section">
 <div className="chip-group">{['Eladnék','Vásárolnék','Értékbecslés','Más kérdés'].map(x=>
 <button className={topic===x?'active':''} type="button" key={x} onClick={()=>setTopic(x)}>{x}</button>)}</div>
 <div className="input-two">
-<label>Név<input required value={name} onChange={e=>setName(e.target.value)} placeholder="Teljes név"/>
+<label>Név<input aria-label="Név" required value={name} onChange={e=>setName(e.target.value)} placeholder="Teljes név"/>
 </label>
-<label>Telefonszám<input type="tel" required value={phone} onChange={e=>setPhone(e.target.value)} placeholder="+36 30 ..."/>
+<label>Telefonszám<input aria-label="Telefonszám" type="tel" required value={phone} onChange={e=>setPhone(e.target.value)} placeholder="+36 30 ..."/>
 </label>
 </div>
-<label>E-mail-cím<input type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="nev@pelda.hu"/>
+<label>E-mail-cím<input aria-label="E-mail-cím" type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="nev@pelda.hu"/>
 </label>
-<label>Üzenet<textarea required rows="4" value={message} onChange={e=>setMessage(e.target.value)} placeholder="Miben segíthetek?"/>
+<label>Üzenet<textarea aria-label="Üzenet" required rows="4" value={message} onChange={e=>setMessage(e.target.value)} placeholder="Miben segíthetek?"/>
 </label>
 <LeadConsent checked={consent} onChange={setConsent}/><LeadStatus loading={loading} sent={sent} error={error} delayed={deliveryDelayed} fallbackHref={fallbackLeadHref(details)}/>
 <button type="submit" disabled={loading||sent} className="btn btn-primary btn-block">{sent?"Üzenet elküldve":loading?"Küldés…":"Üzenet küldése"} <Icon name="arrow"/>

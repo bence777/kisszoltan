@@ -1,13 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Icon from './Icons';
 import {properties} from '../data/properties';
 
 const visual = (index) => properties[index]?.images?.[0];
 export function EditorialListingImage({src,alt,loading='lazy'}){
- const [failed,setFailed]=React.useState(false);
- React.useEffect(()=>setFailed(false),[src]);
- return failed||!src?<div className="kz11-image-unavailable" role="img" aria-label={`${alt} – fotó jelenleg nem elérhető`}><span>INGATLANFOTÓ</span><strong>A kép jelenleg nem érhető el.</strong></div>:<img src={src} alt={alt} loading={loading} onError={()=>setFailed(true)}/>;
+ const [mode,setMode]=React.useState('optimized');
+ React.useEffect(()=>setMode('optimized'),[src]);
+ return mode==='broken'||!src?<div className="kz11-image-unavailable" role="img" aria-label={`${alt} – fotó jelenleg nem elérhető`}><span>INGATLANFOTÓ</span><strong>A kép jelenleg nem érhető el.</strong></div>
+  :mode==='optimized'&&/^https:\/\/(?:www\.)?kisszoltan\.com\/images\//.test(src)?<Image src={src} alt={alt} loading={loading} width={1200} height={800} sizes="(max-width: 768px) 100vw, 50vw" onError={()=>setMode('original')}/>
+  :<img src={src} alt={alt} loading={loading} onError={()=>setMode('broken')}/>;
 }
 
 /**

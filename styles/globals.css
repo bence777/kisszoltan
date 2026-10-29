@@ -2776,7 +2776,7 @@ input[type=range]::-moz-range-thumb {
   max-width: 300px
 }
 
-.footer-grid h4 {
+.footer-grid .footer-heading {
   font: 800 11px var(--body);
   letter-spacing: .11em;
   margin-bottom: 23px;

@@ -3,7 +3,24 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {protocol:'https',hostname:'kisszoltan.com',pathname:'/images/**'},
+      {protocol:'https',hostname:'www.kisszoltan.com',pathname:'/images/**'},
+      {protocol:'https',hostname:'ot.ingatlancdn.com',pathname:'/**'}
+    ],
+  },
   async headers(){return [
+    {source:'/:path*',headers:[
+      {key:'Strict-Transport-Security',value:'max-age=31536000'},
+      {key:'X-Content-Type-Options',value:'nosniff'},
+      {key:'X-Frame-Options',value:'DENY'},
+      {key:'Referrer-Policy',value:'strict-origin-when-cross-origin'},
+      {key:'Permissions-Policy',value:'camera=(), microphone=(), geolocation=()'},
+      // Enforce only stable, non-breaking directives; review script/style restrictions separately.
+      {key:'Content-Security-Policy',value:"frame-ancestors 'none'; object-src 'none'; base-uri 'self'"}
+    ]},
     {source:'/admin/:path*',headers:[{key:'Cache-Control',value:'private, no-store'},{key:'X-Robots-Tag',value:'noindex, nofollow'}]},
     {source:'/auth/:path*',headers:[{key:'Cache-Control',value:'private, no-store'},{key:'X-Robots-Tag',value:'noindex, nofollow'}]},
     {source:'/api/admin/:path*',headers:[{key:'Cache-Control',value:'private, no-store'}]},
