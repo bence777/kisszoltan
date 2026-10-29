@@ -1,0 +1,298 @@
+/* SzabadonMásképp admin v2. Design is intentionally separate from the public site. */
+.admin-app{--sm-ink:#222831;--sm-secondary:#68717e;--sm-stroke:#e3e7ed;--sm-paper:#fff;--sm-shadow:0 18px 50px #18202c22}
+.admin-app .sm-studio-icon{flex:none;display:inline-block;vertical-align:middle}
+.admin-app .sm-icon-button{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;flex:none;padding:7px!important;border:1px solid transparent;border-radius:8px;background:transparent;color:#586373;cursor:pointer}
+.admin-app .sm-icon-button:hover,.admin-app .sm-icon-button.is-active{background:#edf0f4;border-color:#dce1e7;color:#1d232d}
+.admin-app .sm-soft-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;border:1px solid #dfe3e9;background:#fff;color:#333b48;border-radius:8px;padding:8px 12px;cursor:pointer;font-size:12px;font-weight:600}
+.admin-app .sm-soft-button:hover{background:#f5f6f9;border-color:#bfc7d2}
+.admin-app .sm-quiet-button{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#656e7a;font-size:12px;font-weight:600;padding:9px;cursor:pointer}
+.admin-app .sm-quiet-button:hover{color:#222831}
+.admin-app .sm-helper,.admin-app .sm-graph-disclaimer{color:#74808c;line-height:1.6;font-size:12px;margin:0 0 14px}
+.admin-app .sm-field-error{display:block;color:#a12b2b;margin-top:6px}
+.admin-app .sm-modal-actions{margin-top:18px;display:flex;gap:10px;justify-content:flex-end;align-items:center}
+.admin-app .sm-modal-actions button{min-width:90px}
+.admin-app .sm-field{display:grid;gap:7px;font-size:12px;font-weight:600;color:#424b56;margin:0 0 16px}
+.admin-app .sm-field small{font-size:11px;color:#9098a3;line-height:1.5;font-weight:400}
+.admin-app .sm-field textarea{min-height:85px}
+.admin-app .sm-settings-content{display:grid;align-content:start;gap:1px}
+.admin-app .sm-settings-content .sm-field{min-width:0}
+.admin-app .sm-settings-content .sm-settings-divider{border:0;border-top:1px solid #eef0f3;width:100%;margin:16px 0}
+.admin-app .sm-settings-taxon-link{display:flex;align-items:center;gap:8px;font-size:12px;color:#555f70!important;text-decoration:underline!important;padding:5px 0 12px}
+.admin-app .sm-studio-controls button{white-space:nowrap}
+.admin-app .sm-save-state{font-size:11px;font-weight:600;color:#53735f;white-space:nowrap}
+.admin-app .sm-save-state.is-dirty{color:#aa6e1e}
+.admin-app .sm-menu-wrap{position:relative}.admin-app .sm-more-dots{font-weight:900;font-size:20px;line-height:0}
+.admin-app .sm-action-menu{position:absolute;right:0;top:42px;z-index:7;min-width:200px;border:1px solid var(--sm-stroke);background:#fff;box-shadow:var(--sm-shadow);border-radius:10px;padding:5px}
+.admin-app .sm-action-menu :is(button,a){display:flex;gap:10px;align-items:center;padding:10px;width:100%;text-align:left;background:transparent;color:#4b5360!important;border:0;font-size:12px;border-radius:6px}
+.admin-app .sm-action-menu :is(button,a):hover{background:#f5f6f8}
+.admin-app .sm-blog-list-tools{display:flex;gap:12px;margin:0 0 15px;flex-wrap:wrap;align-items:center}
+.admin-app .sm-blog-list-tools .sm-drive-search{min-width:220px;flex:1}
+.admin-app .sm-blog-list-tools select{width:auto;max-width:180px}
+.admin-app .sm-editor-sheet{overflow:visible}
+.admin-app .sm-blog-title{font-weight:700;font-size:clamp(25px,3vw,36px)!important;letter-spacing:-.035em;line-height:1.3;border:0!important;padding:8px 0 25px!important;border-radius:0!important;box-shadow:none!important;height:auto!important;background:transparent!important}
+.admin-app .sm-editor-save-help{font-size:11px;color:#8a919d;padding:12px 6px;margin:3px 0 0}
+.admin-app .sm-template-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:16px;margin:14px 0 0;background:#fff;border:1px solid var(--sm-stroke);border-radius:10px}
+.admin-app .sm-template-row strong{font-size:12px;color:#525b66;margin-right:4px}
+.admin-app .sm-cover-card{position:relative;border-radius:9px;overflow:hidden;border:1px solid var(--sm-stroke);margin-bottom:7px}
+.admin-app .sm-cover-card img{display:block;width:100%;max-height:168px;object-fit:cover}
+.admin-app .sm-cover-card .sm-icon-button{position:absolute;right:7px;top:7px;background:#fff;box-shadow:0 2px 12px #0002}
+.admin-app .sm-cover-placeholder{display:grid;place-items:center;gap:8px;min-height:105px;border-radius:8px;border:1px dashed #d4dae2;background:#fafbfc;color:#a2a9b3}
+.admin-app .sm-cover-placeholder small{font-size:11px}
+.admin-app .sm-related-suggestions{display:grid;gap:10px}
+.admin-app .sm-related-suggestions>div{border:1px solid var(--sm-stroke);border-radius:8px;padding:11px;background:#fbfcfd}
+.admin-app .sm-related-suggestions strong{font-size:12px;display:block;line-height:1.45;color:#2d3642}
+.admin-app .sm-related-suggestions small{display:block;font-size:10px;color:#87909a;margin-top:3px}
+.admin-app .sm-related-suggestions button{display:inline-flex;align-items:center;gap:6px;font-size:11px;background:none;border:0;text-decoration:underline;color:#4a5361;padding:7px 0 0}
+.admin-app .sm-seo-conflicts{border:1px solid #f2daba;border-radius:9px;padding:13px;background:#fffaf2;margin-top:17px}
+.admin-app .sm-seo-conflicts h4{margin:0 0 10px;display:flex;align-items:center;gap:7px;font-size:12px}
+.admin-app .sm-seo-conflicts p{margin:0 0 8px;font-size:11px;line-height:1.5}
+.admin-app .sm-seo-conflicts small{font-size:10px;color:#9a7751}
+/* Contextual writing: one structural toolbar and one selection toolbar. */
+.admin-app .sm-slim-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #eceef2;border-bottom:1px solid #eceef2;margin:8px 0 15px;padding:9px 0}
+.admin-app .sm-slim-toolbar>span{font-size:11px;color:#9099a4;font-weight:600;letter-spacing:.02em}
+.admin-app .sm-slim-toolbar>div{display:flex;align-items:center;gap:3px;flex-wrap:wrap}
+.admin-app .sm-editor-canvas{position:relative;min-height:440px}
+.admin-app .sm-block-insert{position:absolute;left:-42px;z-index:3;width:28px;height:28px;display:grid;place-items:center;background:#fff;color:#7b8592;border:1px solid #dae0e7;border-radius:8px;box-shadow:0 2px 9px #0001;cursor:pointer;transition:background .15s}
+.admin-app .sm-block-insert:hover{background:#edf0f4;color:#242b33}
+.admin-app .sm-rich-editor .ProseMirror{padding:9px 0 80px;min-height:420px;outline:none;font-size:15px;line-height:1.8;color:#333943}
+.admin-app .sm-rich-editor .ProseMirror>p{min-height:1.5em}
+.admin-app .sm-rich-editor .ProseMirror h2{margin:26px 0 12px;font-size:25px;letter-spacing:-.025em}
+.admin-app .sm-rich-editor .ProseMirror h3{margin:21px 0 11px;font-size:20px}
+.admin-app .sm-rich-editor .ProseMirror blockquote{padding:12px 18px;border-left:3px solid #8793a2;background:#f6f7f8;color:#525b68}
+.admin-app .sm-selection-toolbar{display:flex;align-items:center;gap:4px;position:fixed;transform:translateX(-50%);z-index:89;background:#fff;border:1px solid #dbe1e8;border-radius:10px;box-shadow:0 12px 40px #121e2b2b;padding:5px}
+.admin-app .sm-selection-toolbar .sm-icon-button{width:32px;height:32px}
+/* Entire floating window fades, not just its background. Hover/focus restores opacity. */
+.admin-app .sm-floating-panel{position:fixed;z-index:1000;max-height:min(78vh,770px);overflow:hidden;display:flex;flex-direction:column;background:white;color:#242b34;border:1px solid #d8dfe8;box-shadow:0 25px 80px #19202d44;border-radius:13px;opacity:.29;transition:opacity .2s ease,box-shadow .2s ease}
+.admin-app .sm-floating-panel:hover,.admin-app .sm-floating-panel:has(:focus-visible),.admin-app .sm-floating-panel.is-dragging{opacity:1;box-shadow:0 25px 80px #19202d55}
+.admin-app .sm-float-title{display:flex;align-items:center;gap:8px;min-height:49px;flex:none;padding:6px 9px 6px 14px;cursor:grab;border-bottom:1px solid #e7ebf0;touch-action:none;user-select:none}
+.admin-app .sm-floating-panel.is-dragging .sm-float-title{cursor:grabbing}
+.admin-app .sm-drag-grip{display:grid;place-items:center;color:#a0a8b3}
+.admin-app .sm-float-title strong{font-size:13px;font-weight:700}
+.admin-app .sm-float-title .sm-float-hint{font-size:10px;color:#9ba4ae;margin-left:auto}
+.admin-app .sm-float-body{padding:16px;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.admin-app .sm-float-body>input{margin:0 0 12px}
+.admin-app .sm-block-list{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-height:360px;overflow-y:auto}
+.admin-app .sm-block-list button{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #eef0f3;border-radius:9px;background:#fff;text-align:left;color:#3f4754}
+.admin-app .sm-block-list button:hover{border-color:#b7c0cb;background:#f5f6f8}
+.admin-app .sm-block-icon{flex:none;width:37px;height:37px;display:grid;place-items:center;background:#f5f6f8;border:1px solid #edf0f3;border-radius:8px;color:#4a5563}
+.admin-app .sm-block-list strong{display:block;font-size:12px;color:#2e3743;line-height:1.4}
+.admin-app .sm-block-list small{display:block;font-size:10px;color:#9098a3;margin-top:3px}
+.admin-app .sm-related-picker{max-height:228px;overflow-y:auto;margin:8px 0 14px;border:1px solid #e9edf2;border-radius:9px}
+.admin-app .sm-related-picker button{display:block;text-align:left;background:#fff;border:0;border-bottom:1px solid #f0f1f4;width:100%;padding:11px}
+.admin-app .sm-related-picker button:hover{background:#f5f7fa}
+.admin-app .sm-related-picker strong{display:block;font-size:12px}
+.admin-app .sm-related-picker small{display:block;font-size:10px;margin-top:3px;color:#858c97}
+.admin-app .sm-media-choice{margin-bottom:14px;width:100%;gap:8px}
+/* Image NodeView: visual crop button appears only when hovered/selected. */
+.admin-app .sm-photo-node{margin:18px 0;display:block}
+.admin-app .sm-editor-image-figure{position:relative;margin-top:12px;margin-bottom:12px;max-width:100%;min-width:120px;border:2px solid transparent;border-radius:10px;transition:border .15s}
+.admin-app .sm-photo-node.is-selected .sm-editor-image-figure,.admin-app .sm-editor-image-figure:hover{border-color:#aab4bf}
+.admin-app .sm-editor-image-figure img{display:block;max-width:100%}
+.admin-app .sm-editor-image-figure figcaption{font-size:11px;color:#939ba4;margin:8px 0;text-align:center}
+.admin-app .sm-photo-actions{display:flex;gap:7px;position:absolute;right:8px;top:8px;opacity:0;pointer-events:none;transition:opacity .16s}
+.admin-app .sm-editor-image-figure:hover .sm-photo-actions,.admin-app .sm-photo-node.is-selected .sm-photo-actions{opacity:1;pointer-events:auto}
+.admin-app .sm-photo-actions button{display:inline-flex;align-items:center;gap:7px;border:1px solid #e1e4e9;border-radius:7px;background:#fff;padding:7px 10px;color:#414b57;font-size:11px;box-shadow:0 2px 9px #0002}
+.admin-app .sm-crop-dialog .sm-float-body{padding:17px}
+.admin-app .sm-image-edit-controls{display:flex;align-items:center;gap:6px;margin:0 0 12px;flex-wrap:wrap}
+.admin-app .sm-crop-presets{display:flex;gap:3px;margin-left:auto}
+.admin-app .sm-crop-presets button{border:1px solid #e0e4eb;background:#fff;border-radius:7px;padding:8px 9px;font-size:11px;color:#596371}
+.admin-app .sm-crop-presets button:hover{background:#f1f3f6}
+.admin-app .sm-crop-stage{position:relative;margin:auto;width:480px;max-width:100%;height:310px;background:#232730;overflow:hidden;border-radius:9px;touch-action:none;user-select:none}
+.admin-app .sm-crop-stage>img{position:absolute;max-width:none;pointer-events:none;user-select:none}
+.admin-app .sm-crop-overlay{position:absolute;z-index:2;border:2px solid #fff;box-shadow:0 0 0 1500px #070b13a6;cursor:move;touch-action:none}
+.admin-app .sm-crop-overlay:before,.admin-app .sm-crop-overlay:after{content:'';position:absolute;inset:33% 0;border-top:1px solid #fff9;border-bottom:1px solid #fff9;pointer-events:none}
+.admin-app .sm-crop-overlay:after{inset:0 33%;border-top:0;border-bottom:0;border-left:1px solid #fff9;border-right:1px solid #fff9}
+.admin-app .sm-crop-handle{position:absolute;width:16px;height:16px;border:2px solid #242a33;background:#fff;border-radius:3px;z-index:3;touch-action:none}
+.admin-app .sm-crop-tl{left:-7px;top:-7px;cursor:nwse-resize}.admin-app .sm-crop-tr{right:-7px;top:-7px;cursor:nesw-resize}.admin-app .sm-crop-bl{left:-7px;bottom:-7px;cursor:nesw-resize}.admin-app .sm-crop-br{right:-7px;bottom:-7px;cursor:nwse-resize}
+.admin-app .sm-image-fields{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:15px}
+.admin-app .sm-choice-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.admin-app .sm-choice-row button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #dfe4ea;padding:8px 10px;background:#fff;border-radius:7px;color:#606976;font-size:11px}
+.admin-app .sm-choice-row button.is-active{background:#222832;color:#fff;border-color:#222832}
+/* Taxonomy fields */
+.admin-app .sm-taxonomy-field{position:relative;margin:0 0 18px;min-width:0}
+.admin-app .sm-field-label{font-size:12px;font-weight:600;color:#424b56;margin:0 0 8px}
+.admin-app .sm-taxonomy-current{display:flex;justify-content:space-between;align-items:center;border:1px solid #dce0e5;border-radius:7px;min-height:42px;padding:3px 5px 3px 10px;background:white;gap:8px}
+.admin-app .sm-taxonomy-current>span{color:#424b56;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:12px}
+.admin-app .sm-taxonomy-current .sm-soft-button{min-height:30px;padding:5px 9px;font-size:11px}
+.admin-app .sm-taxonomy-menu{position:relative;z-index:10;background:white;border:1px solid #dfe4ea;border-radius:9px;box-shadow:0 12px 30px #0002;padding:8px;margin-top:6px}
+.admin-app .sm-taxonomy-menu-list{max-height:180px;overflow-y:auto;margin:5px 0}
+.admin-app .sm-taxonomy-menu-list button{display:block;width:100%;padding:10px 9px;border:0;background:white;text-align:left;border-radius:6px;font-size:12px;color:#353c46}
+.admin-app .sm-taxonomy-menu-list button:hover,.admin-app .sm-taxonomy-create:hover{background:#f4f6f9}
+.admin-app .sm-taxonomy-menu-list small{display:block;margin-top:2px;font-size:10px;color:#8a94a0}
+.admin-app .sm-taxonomy-create{display:flex;align-items:center;gap:7px;border:1px dashed #bfc6d0;background:#fafbfc;border-radius:7px;width:100%;padding:9px;color:#2e3741;font-size:11px;text-align:left}
+.admin-app .sm-tags-input{display:flex;align-items:center;gap:6px;min-height:46px;flex-wrap:wrap;border:1px solid #dce0e5;border-radius:7px;background:#fff;padding:6px}
+.admin-app .sm-tags-input:focus-within{border-color:#7e858f}
+.admin-app .sm-tags-input input{border:0!important;box-shadow:none!important;outline:0!important;flex:1;min-width:120px;width:auto!important;padding:3px!important;min-height:28px!important;font-size:11px!important}
+.admin-app .sm-tag-chip{display:inline-flex;align-items:center;gap:6px;border-radius:6px;background:#edf0f4;border:1px solid #dce2e9;padding:4px 7px;font-size:11px;color:#414956}
+.admin-app .sm-tag-chip button{background:none;border:0;color:#5b6674;display:grid;place-items:center;padding:0}
+.admin-app .sm-taxonomy-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 20px}
+.admin-app .sm-taxonomy-toolbar .sm-drive-search{min-width:250px}
+.admin-app .sm-taxonomy-create-form{display:flex;align-items:flex-end;gap:12px;background:#fff;border:1px solid var(--sm-stroke);border-radius:10px;padding:19px;margin:0 0 20px}
+.admin-app .sm-taxonomy-create-form>.sm-field{flex:1;margin:0}
+.admin-app .sm-taxonomy-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.admin-app .sm-taxonomy-card{display:flex;justify-content:space-between;gap:14px;background:white;border:1px solid var(--sm-stroke);border-radius:11px;padding:16px;min-width:0}
+.admin-app .sm-taxonomy-card>div:first-child{display:flex;align-items:flex-start;gap:12px;min-width:0}
+.admin-app .sm-taxonomy-mini{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--sm-stroke);background:#f6f7f9;border-radius:8px}
+.admin-app .sm-taxonomy-card h3{margin:0;font-size:14px}
+.admin-app .sm-taxonomy-card small{font-size:10px;color:#8c949e;overflow-wrap:anywhere}
+.admin-app .sm-taxonomy-card p{font-size:11px;color:#737b86;margin:8px 0 3px}
+.admin-app .sm-taxonomy-card-actions{display:flex;flex-wrap:wrap;align-content:flex-start;gap:2px}
+.admin-app .sm-taxonomy-legacy{font-size:9px;color:#8a95a1;max-width:90px}
+/* Google-Drive inspired file manager */
+.admin-app .sm-drive-root{position:relative;min-width:0;border:1px solid var(--sm-stroke);border-radius:13px;background:#fff;overflow:hidden;outline-offset:4px}
+.admin-app .sm-drive-root.is-picker{border:0;border-radius:0}
+.admin-app .sm-drive-head{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:22px 24px;border-bottom:1px solid var(--sm-stroke)}
+.admin-app .sm-drive-head h2{margin:0 0 3px;font-size:19px;letter-spacing:-.035em}
+.admin-app .sm-drive-head span{color:#9ba3ae;font-size:11px}
+.admin-app .sm-drive-primary-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.admin-app .sm-drive-primary-actions .portal-primary{gap:8px}
+.admin-app .sm-drive-body{display:flex;min-height:470px;max-height:min(74vh,960px)}
+.admin-app .sm-drive-rail{flex:0 0 205px;border-right:1px solid var(--sm-stroke);padding:16px 11px 20px;background:#fcfcfd}
+.admin-app .sm-drive-rail>button{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:10px 12px;background:transparent;border:0;border-radius:8px;font-size:12px;color:#67717d}
+.admin-app .sm-drive-rail>button:hover{background:#f0f3f6}
+.admin-app .sm-drive-rail>button.is-current{background:#eaeef3;color:#242c36;font-weight:700}
+.admin-app .sm-drive-rail-divider{height:1px;background:#e7eaef;margin:18px 7px}
+.admin-app .sm-drive-opt{display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:#67717f;font-size:11px;padding:0 9px}
+.admin-app .sm-drive-opt small{display:block;flex-basis:100%;margin-left:28px;color:#9da5af;font-size:10px}
+.admin-app .sm-drive-hint{font-size:10px;color:#9ca4ae;padding:0 11px;margin-top:25px;line-height:1.6}
+.admin-app .sm-drive-main{flex:1;min-width:0;overflow-y:auto;padding:0 20px 25px}
+.admin-app .sm-drive-path{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 2px;border-bottom:1px solid #f0f2f4;font-size:11px;color:#a0a6b0}
+.admin-app .sm-drive-crumbs{display:flex;align-items:center;flex-wrap:wrap;gap:4px;min-width:0}
+.admin-app .sm-drive-crumbs button{border:0;background:transparent;border-radius:5px;padding:5px;color:#535d68;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}
+.admin-app .sm-drive-crumbs button:hover{background:#edf1f4}
+.admin-app .sm-crumb-sep{color:#b4bbc5}
+.admin-app .sm-drive-toolbar{display:flex;align-items:center;gap:9px;padding:14px 0;flex-wrap:wrap}
+.admin-app .sm-drive-search{display:flex;align-items:center;gap:8px;border:1px solid #dfe4ea;border-radius:8px;background:#f9fafb;color:#8b95a2;padding:0 10px;min-width:150px;flex:1}
+.admin-app .sm-drive-search:focus-within{border-color:#9ba6b5;background:white}
+.admin-app .sm-drive-search input{border:0!important;box-shadow:none!important;background:transparent!important;outline:0!important;flex:1;min-width:0;width:100%;padding:10px 0!important;font-size:12px!important}
+.admin-app .sm-drive-toolbar select{width:150px;min-height:39px;font-size:11px}
+.admin-app .sm-drive-view-buttons{display:flex;border:1px solid #dfe4ea;border-radius:8px;padding:3px}
+.admin-app .sm-drive-view-buttons button{border:0;background:transparent;border-radius:5px;padding:6px;color:#7e8997}
+.admin-app .sm-drive-view-buttons button.is-active{background:#e9edf2;color:#2d3440}
+.admin-app .sm-drive-files{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:13px;align-content:start;padding:7px 0 30px}
+.admin-app .sm-drive-file{border:1px solid #edf0f4;border-radius:10px;overflow:hidden;background:white;min-width:0;cursor:default;transition:border .12s,background .12s,box-shadow .12s}
+.admin-app .sm-drive-file:hover{border-color:#bbc5d2;box-shadow:0 2px 9px #2228310d}
+.admin-app .sm-drive-file.is-selected{border-color:#6f8199;background:#edf2f8;box-shadow:inset 0 0 0 1px #6f8199}
+.admin-app .sm-drive-file-art{display:grid;place-items:center;background:#f6f8fa;color:#a5afb9;height:112px;overflow:hidden}
+.admin-app .sm-drive-file:has(.sm-studio-icon:first-child) .sm-drive-file-art{color:#8491a1}
+.admin-app .sm-drive-file-art img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.admin-app .sm-drive-file-info{padding:10px;min-width:0}
+.admin-app .sm-drive-file-info strong{font-size:11px;font-weight:700;color:#3b444e;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.admin-app .sm-drive-file-info small{font-size:10px;color:#9ba2ac;display:block;margin-top:5px}
+.admin-app .sm-drive-file-date{display:none;font-size:10px;color:#8f98a3}
+.admin-app .sm-drive-list{display:block;padding:0 0 30px}
+.admin-app .sm-drive-list .sm-drive-file{display:grid;grid-template-columns:52px minmax(0,1fr) 100px;gap:12px;align-items:center;border:0;border-bottom:1px solid #edf0f3;border-radius:0;padding:7px 10px}
+.admin-app .sm-drive-list .sm-drive-file:hover{box-shadow:none;background:#f7f9fc}
+.admin-app .sm-drive-list .sm-drive-file.is-selected{background:#edf2f8}
+.admin-app .sm-drive-list .sm-drive-file-art{height:42px;border-radius:6px}
+.admin-app .sm-drive-list .sm-drive-file-art svg{width:24px;height:24px}
+.admin-app .sm-drive-list .sm-drive-file-info{padding:0}
+.admin-app .sm-drive-list .sm-drive-file-date{display:block;text-align:right}
+.admin-app .sm-drive-empty{display:grid;justify-items:center;align-content:center;text-align:center;gap:10px;min-height:300px;color:#a1aab5;padding:30px}
+.admin-app .sm-drive-empty strong{font-size:14px;color:#69737f}
+.admin-app .sm-drive-empty span{font-size:11px;max-width:240px;line-height:1.6}
+.admin-app .sm-drive-selection{display:flex;align-items:center;gap:7px;flex-wrap:wrap;position:sticky;top:0;z-index:9;background:#edf1f7;border:1px solid #d8e0ea;border-radius:9px;padding:7px;margin:0 0 5px}
+.admin-app .sm-drive-selection>strong{font-size:11px;color:#4a5666;margin:0 auto 0 6px}
+.admin-app .sm-drive-selection>button:not(.sm-icon-button){display:inline-flex;align-items:center;gap:6px;background:white;color:#48525e;border:1px solid #dce2e9;border-radius:7px;padding:7px 9px;font-size:11px}
+.admin-app .sm-drive-selection>button.sm-selection-insert{background:#222831;color:white;border-color:#222831}
+.admin-app .sm-drive-detail{flex:0 0 245px;border-left:1px solid var(--sm-stroke);padding:19px 15px;overflow-y:auto;min-width:0}
+.admin-app .sm-drive-detail-head{display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.admin-app .sm-drive-detail-art{height:154px;background:#f7f8fa;display:grid;place-items:center;margin:15px 0;border-radius:9px;overflow:hidden;color:#a0abb7}
+.admin-app .sm-drive-detail-art img{max-width:100%;max-height:100%;object-fit:contain}
+.admin-app .sm-drive-detail-name{display:block;overflow-wrap:anywhere;font-size:12px}
+.admin-app .sm-drive-detail dl{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10px;padding:15px 0;border-top:1px solid #edf0f3;margin-top:13px}
+.admin-app .sm-drive-detail dt{color:#a0a9b3}.admin-app .sm-drive-detail dd{text-align:right;overflow-wrap:anywhere;margin:0;color:#525c69}
+.admin-app .sm-drive-detail-toggle{display:flex;align-items:center;gap:8px;background:transparent;border:0;color:#87919d;font-size:11px;padding:7px 20px;margin-left:auto}
+.admin-app .sm-drive-uploads{border:1px solid #e1e6ed;border-radius:9px;padding:10px;margin-top:7px}
+.admin-app .sm-drive-uploads>div{display:flex;align-items:center;gap:8px;font-size:12px}
+.admin-app .sm-drive-uploads>div button{margin-left:auto;border:0;background:transparent;color:#7b8490}
+.admin-app .sm-drive-uploads p{display:flex;justify-content:space-between;gap:15px;font-size:11px;padding:6px 0;border-top:1px solid #f2f3f5}
+.admin-app .sm-drive-uploads p span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.admin-app .sm-drive-uploads small{white-space:nowrap;color:#8d97a1}
+.admin-app .sm-drive-dropzone{position:absolute;inset:0;z-index:21;background:#eef3f9eb;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#445162;font-size:15px;font-weight:700;pointer-events:none;border:3px dashed #708098}
+.admin-app .sm-drive-context-dismiss{position:fixed;inset:0;background:transparent;border:0;z-index:103}
+.admin-app .sm-drive-context{position:fixed;z-index:104;border-radius:9px;padding:5px;background:#fff;border:1px solid var(--sm-stroke);box-shadow:var(--sm-shadow);min-width:180px;display:grid}
+.admin-app .sm-drive-context button{padding:10px 12px;background:transparent;border:0;text-align:left;font-size:12px;color:#3f4957;border-radius:5px}
+.admin-app .sm-drive-context button:hover{background:#f2f4f6}
+.admin-app .sm-drive-context button.is-danger{color:#b53939}
+.admin-app .sm-drive-dialog{width:min(100%,510px);padding:24px;background:white;color:#27313b;border-radius:13px;box-shadow:var(--sm-shadow)}
+.admin-app .sm-drive-dialog-header{display:flex;align-items:center;justify-content:space-between;margin:0 0 20px}
+.admin-app .sm-drive-dialog-header h3{margin:0;font-size:18px}
+.admin-app .sm-drive-dialog>p{font-size:12px;color:#6d7784;line-height:1.65}
+.admin-app .sm-drive-folder-choices{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}
+.admin-app .sm-drive-folder-choices button{display:flex;align-items:center;gap:6px;background:#f7f8fa;border:1px solid #e4e8ec;border-radius:7px;padding:9px;font-size:11px}
+.admin-app .sm-drive-dialog .sm-danger-button{background:#bd3838;border-color:#bd3838}
+.admin-app .sm-studio-picker{width:min(100%,1180px);max-height:92vh;padding:0;overflow:auto}
+.admin-app .sm-modal-backdrop{z-index:1010}
+/* Site graph */
+.admin-app .sm-graph-controls{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:15px}
+.admin-app .sm-graph-controls>div{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.admin-app .sm-graph-controls label{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:#75808d}
+.admin-app .sm-graph-controls select{min-height:36px;width:auto}
+.admin-app .sm-graph-controls button{gap:8px}
+.admin-app .sm-crawl-progress{border:1px solid #e1e6ed;background:white;border-radius:9px;padding:11px;margin-bottom:15px;font-size:12px}
+.admin-app .sm-crawl-progress>div{height:5px;background:#ebeff3;margin-top:10px;border-radius:5px;overflow:hidden}
+.admin-app .sm-crawl-progress i{display:block;height:100%;background:#536273;transition:width .2s}
+.admin-app .sm-graph-disclaimer{padding:12px 0}
+.admin-app .sm-graph-visual{background:#fff;border:1px solid var(--sm-stroke);border-radius:11px;padding:20px;margin-bottom:20px}
+.admin-app .sm-graph-visual h2{margin:0;font-size:16px}
+.admin-app .sm-graph-canvas{max-width:100%;overflow:auto}
+.admin-app .sm-graph-canvas svg{width:100%;min-width:420px;max-height:490px}
+.admin-app .sm-graph-legend{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;font-size:11px;color:#78818d}
+.admin-app .sm-graph-legend span{display:flex;align-items:center;gap:6px}
+.admin-app .sm-graph-legend i{display:inline-block;width:11px;height:11px;background:#d0d7e0;border-radius:50%}
+.admin-app .sm-graph-legend i.is-blog{background:#5d6b7c}.admin-app .sm-graph-legend i.is-current{background:#1e252e}
+.admin-app .sm-graph-focused{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr) 38px;gap:20px;align-items:start;background:#edf2f7;border:1px solid #d5dee8;border-radius:11px;padding:19px;margin-bottom:20px}
+.admin-app .sm-graph-focused h3{margin:0;font-size:14px;overflow-wrap:anywhere}
+.admin-app .sm-graph-focused small{display:block;font-size:10px;color:#8793a0;overflow-wrap:anywhere}
+.admin-app .sm-graph-focused>div>strong{display:block;font-size:11px;margin-bottom:5px}
+.admin-app .sm-graph-focused>div>button{border:0;background:transparent;color:#4e5e73;text-decoration:underline;display:block;font-size:10px;overflow-wrap:anywhere;padding:3px 0;text-align:left}
+.admin-app .sm-graph-filters{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.admin-app .sm-graph-filters input{width:230px;max-width:100%}
+.admin-app .sm-graph-filters select{width:auto;max-width:170px}
+.admin-app .sm-graph-grid .sm-graph-row{width:100%;background:transparent;border:0;border-top:1px solid #edf0f3;cursor:pointer;text-align:left;grid-template-columns:minmax(0,1fr) 53px 53px}
+.admin-app .sm-graph-grid .sm-graph-row:hover,.admin-app .sm-graph-grid .sm-graph-row.is-current{background:#f4f7fb}
+.admin-app .sm-graph-row span:first-child{min-width:0}.admin-app .sm-graph-row span:nth-child(n+2){font-size:10px}
+.admin-app .sm-graph-warning{display:flex;gap:8px;padding:10px 0;border-bottom:1px solid #e9edf2;color:#a77839}
+.admin-app .sm-graph-warning strong{font-size:11px;color:#454c55;line-height:1.45}
+.admin-app .sm-graph-warning small{display:block;font-size:10px;color:#ad793d}
+@media(max-width:1160px){.admin-app .sm-drive-rail{flex-basis:165px}.admin-app .sm-drive-detail{flex-basis:200px}.admin-app .sm-drive-head{padding:17px}.admin-app .sm-drive-main{padding:0 14px 17px}}
+@media(max-width:900px){.admin-app .sm-drive-rail{flex:0 0 75px}.admin-app .sm-drive-rail>button{font-size:0;justify-content:center}.admin-app .sm-drive-rail>button svg{width:20px;height:20px}.admin-app .sm-drive-opt,.admin-app .sm-drive-hint{display:none}.admin-app .sm-drive-detail{display:none}.admin-app .sm-drive-main{padding:0 12px 12px}.admin-app .sm-graph-focused{grid-template-columns:1fr 1fr}.admin-app .sm-graph-focused>div:first-child{grid-column:1/-1}}
+@media(max-width:650px){.admin-app .sm-slim-toolbar>span{display:none}.admin-app .sm-block-insert{left:-8px;top:0;opacity:.8}.admin-app .sm-block-list{grid-template-columns:1fr}.admin-app .sm-float-title .sm-float-hint{display:none}.admin-app .sm-floating-panel{max-height:80vh}.admin-app .sm-image-fields{grid-template-columns:1fr}.admin-app .sm-crop-stage{transform-origin:top left;width:100%;height:240px}.admin-app .sm-drive-head{padding:13px;align-items:start;flex-direction:column}.admin-app .sm-drive-body{min-height:410px}.admin-app .sm-drive-rail{flex-basis:50px;padding:12px 5px}.admin-app .sm-drive-rail>button{padding:10px 0}.admin-app .sm-drive-files{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.admin-app .sm-drive-file-art{height:85px}.admin-app .sm-drive-toolbar select{width:115px}.admin-app .sm-drive-search{min-width:100%}.admin-app .sm-drive-list{display:block}.admin-app .sm-drive-list .sm-drive-file{grid-template-columns:34px minmax(0,1fr)}.admin-app .sm-drive-list .sm-drive-file-date{display:none}.admin-app .sm-drive-selection{position:relative;top:auto}.admin-app .sm-taxonomy-create-form{flex-direction:column;align-items:stretch}.admin-app .sm-taxonomy-create-form .sm-field{width:100%}.admin-app .sm-graph-filters input{width:100%}.admin-app .sm-graph-visual{padding:12px}.admin-app .sm-graph-focused{grid-template-columns:1fr}.admin-app .sm-graph-focused>div:first-child{grid-column:auto}.admin-app .sm-graph-grid .sm-graph-row{grid-template-columns:minmax(0,1fr) 40px 40px}.admin-app .sm-studio-controls{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){.admin-app .sm-floating-panel,.admin-app .sm-photo-actions,.admin-app .sm-drive-file{transition:none}}
+.admin-app .sm-node-buttons{display:flex;gap:7px;align-items:center}
+.admin-app .sm-node-buttons button{display:inline-flex;align-items:center;gap:6px;border:1px solid #e0e5eb;border-radius:7px;background:#fff;color:#596473;padding:7px 10px;font-size:11px}
+.admin-app .sm-node-buttons button:hover{background:#f4f6f8}
+.admin-app .sm-embed-node .sm-embed-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.admin-app .sm-quiz-floating .sm-float-body{max-height:calc(80vh - 48px);overflow:auto}
+.admin-app .sm-quiz-floating .sm-quiz-question,.admin-app .sm-quiz-floating .sm-quiz-result-edit{padding:12px;border:1px solid #e4e8ed;border-radius:8px;background:#fafbfc;margin:11px 0}
+.admin-app .sm-quiz-floating .sm-quiz-question-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}
+.admin-app .sm-quiz-floating .sm-quiz-question-head button{background:none;border:0;color:#ae4141;font-size:11px}
+.admin-app .sm-quiz-floating .sm-quiz-option{display:grid;grid-template-columns:minmax(0,1fr) 88px 26px;gap:8px;margin:8px 0;align-items:center}
+.admin-app .sm-quiz-floating .sm-quiz-option label{font-size:10px}
+.admin-app .sm-quiz-floating .sm-quiz-option button{background:transparent;border:0;color:#a34444;font-size:18px}
+.admin-app .sm-drive-rail-heading{display:block;font-size:9px;letter-spacing:.11em;color:#a0a8b2;padding:0 12px;margin-bottom:8px}
+.admin-app .sm-drive-rail-tree{max-height:235px;overflow:auto;scrollbar-width:thin}
+.admin-app .sm-drive-tree-entry{display:flex;align-items:center;flex-wrap:wrap;min-width:0}
+.admin-app .sm-drive-tree-toggle{width:22px;height:27px;flex:0 0 22px;background:none;border:0;color:#87919c;display:grid;place-items:center}
+.admin-app .sm-drive-tree-name{display:flex;min-width:0;align-items:center;gap:6px;flex:1;text-align:left;border:0;border-radius:5px;background:none;color:#697481;font-size:11px;padding:6px 3px}
+.admin-app .sm-drive-tree-name span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.admin-app .sm-drive-tree-name.is-current,.admin-app .sm-drive-tree-name:hover{background:#edf1f5;color:#25313c}
+.admin-app .sm-drive-tree-sub{flex-basis:100%;width:100%}
+@media(max-width:900px){.admin-app .sm-drive-rail-heading,.admin-app .sm-drive-rail-tree{display:none}}
+/* For mouse users the WHOLE floating window fades outside hover, even when its search field retains focus. */
+@media (hover:hover) and (pointer:fine){.admin-app .sm-floating-panel:not(:hover):not(.is-dragging){opacity:.28}}
+
+/* UX follow-up: keyboard focus, slim toolbar and predictable scroll areas. */
+.admin-app .sm-history-button{border:0;background:transparent;border-radius:7px;padding:8px 9px;color:#68717e;font-size:11px;font-weight:600;cursor:pointer}
+.admin-app .sm-history-button:hover,.admin-app .sm-history-button:focus-visible{background:#f0f2f5;color:#1e242e}
+.admin-app .sm-drive-file:focus-visible,.admin-app .sm-block-list button:focus-visible,.admin-app .sm-float-title button:focus-visible{outline:2px solid #393f47;outline-offset:2px}
+.admin-app .sm-drive-file[aria-selected="true"]{box-shadow:inset 0 0 0 2px #343943}
+.admin-app .sm-studio-controls button:disabled{opacity:.55;cursor:wait}
+@media (hover:none),(pointer:coarse){.admin-app .sm-floating-panel{opacity:1}}
+
+/* Public and private file spaces – separate buckets, no styling changes to site. */
+.sm-storage-visibility{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 18px;border-bottom:1px solid rgba(60,60,60,.1)}
+.sm-storage-visibility button{border:1px solid #cdd3d0;border-radius:8px;background:transparent;padding:8px 12px;cursor:pointer;font:inherit}
+.sm-storage-visibility button.is-selected{background:#233d35;color:#fff;border-color:#233d35}
+.sm-storage-visibility small{flex-basis:100%;opacity:.7}

@@ -1,0 +1,91 @@
+/* Admin, vendégprofil és blog – az eredeti SzabadonMásképp szerkesztői arculatához igazítva */
+.portal-page{min-height:65vh;background:#faf9f7;padding:75px 0 110px;color:#2b433e}
+.portal-page h1{font:normal clamp(48px,7vw,78px)/1.05 Georgia,serif;letter-spacing:-.05em;margin:19px 0 37px}
+.portal-page h2{font:normal 30px/1.2 Georgia,serif;margin:0 0 20px}
+.portal-page h2 small{font:normal 12px Arial,sans-serif;color:#70847b}
+.portal-page a:not(.portal-primary){color:#357770;text-decoration:underline}
+.portal-page p{line-height:1.7}
+.portal-panel,.portal-card{border:1px solid #dae6dd;background:#fff;padding:30px;margin:0 0 22px}
+.portal-panel h3{font:normal 23px Georgia,serif}
+.portal-login{max-width:520px;background:white;padding:36px;border:1px solid #d7e4db}
+.portal-login>p{font-size:14px;color:#667b71}
+.portal-form{display:grid;gap:18px}
+.portal-form label,.portal-editor label,.portal-reschedule label,.portal-full-field{display:flex;flex-direction:column;gap:9px;font-size:13px;font-weight:600;color:#3b5e54}
+.portal-page input:not([type=checkbox]),.portal-page select,.portal-page textarea{width:100%;min-height:44px;padding:10px 13px;border:1px solid #bbd1c4;border-radius:0;color:#304d43;background:white;font:normal 14px Arial,sans-serif}
+.portal-page input[type=checkbox]{width:21px;height:21px;accent-color:#4e9292}
+.portal-page textarea{resize:vertical;line-height:1.65}
+.portal-primary,.portal-secondary{appearance:none;display:inline-flex;align-items:center;justify-content:center;background:#4e9292;color:white!important;border:1px solid #4e9292;padding:12px 18px;min-height:44px;font:normal 13px Arial,sans-serif;cursor:pointer;text-decoration:none!important}
+.portal-secondary{background:#fff;border-color:#a6c6b6;color:#366456!important}
+.portal-primary:disabled,.portal-secondary:disabled{opacity:.55;cursor:not-allowed}
+.portal-link{padding:7px 0;border:0;background:transparent;color:#397a70;text-decoration:underline;cursor:pointer;font:normal 13px Arial,sans-serif}
+.portal-error{background:#fff0ed;border:1px solid #d6aca6;color:#8e4145;padding:12px 17px;overflow-wrap:anywhere}
+.portal-ok{background:#eff8f0;border:1px solid #a2cbb3;color:#2e6749;padding:12px 17px}
+.portal-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;border-bottom:1px solid #d1ddd5;padding:5px 0 19px;margin-bottom:25px;font-size:14px}
+.portal-toolbar p{margin:0}.portal-toolbar a{font-size:14px}
+.portal-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 32px}
+.portal-metrics>div{background:#e9f2ec;padding:23px 20px;min-width:0}
+.portal-metrics strong{display:block;color:#37695c;font:normal 40px Georgia,serif}
+.portal-metrics span{font-size:12px;color:#61796d;line-height:1.6}
+.portal-tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid #cbdad0;margin:0 0 28px;padding-bottom:9px}
+.portal-tabs button{background:transparent;border:1px solid transparent;padding:11px 16px;color:#49665b;font:normal 13px Arial,sans-serif;cursor:pointer}
+.portal-tabs button.active{background:#385c51;color:#fff}
+.portal-section{padding:8px 0}.portal-section>h2{margin-bottom:12px}
+.portal-table-wrap{overflow-x:auto;border:1px solid #d7e4dc;margin-top:17px;background:white}
+.portal-table{width:100%;border-collapse:collapse;font-size:13px;text-align:left;min-width:670px}
+.portal-table th{background:#eaf1ec;text-align:left;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.portal-table th,.portal-table td{padding:17px 16px;border-bottom:1px solid #e3eee7;vertical-align:top;line-height:1.65}
+.portal-table td small{display:block;color:#789087;overflow-wrap:anywhere}
+.portal-row-actions{display:flex;gap:8px;flex-wrap:wrap}
+.portal-row-actions button{background:#f0f7f2;color:#315d52;border:1px solid #b8d2c0;padding:6px 9px;cursor:pointer}
+.portal-tag{display:inline-block;color:#3a6d5d;border:1px solid #bad3c1;font-size:11px;padding:5px 8px;background:#edf6ef}
+.portal-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:18px 0 4px}
+.portal-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px;margin:22px 0}
+.portal-form-grid label,.portal-setting{display:flex;flex-direction:column;gap:8px;font-size:13px;color:#375c50}
+.portal-setting-list{max-width:820px}.portal-setting{display:grid;grid-template-columns:minmax(180px,1fr) minmax(150px,1fr);gap:20px;align-items:center;border-bottom:1px solid #e3eee5;padding:13px 0}
+.portal-setting input:not([type=checkbox]),.portal-setting select{max-width:280px}
+.portal-help{font-size:13px;color:#687e71}
+.portal-entry-list{display:grid;gap:12px;margin-top:22px}
+.portal-entry{padding:23px;background:white;border:1px solid #dce8df;display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:center}
+.portal-entry small{display:block;color:#73897f;line-height:1.7;margin-top:5px}
+.portal-entry .portal-editor{grid-column:1/-1}
+.portal-editor{margin-top:18px;padding:21px;background:#f8fbf8}
+.portal-cards{display:grid;gap:17px;max-width:780px}
+.portal-card h2{margin:18px 0 5px}.portal-card>p{color:#486a5f}
+.portal-reschedule{background:#f0f7f2;margin-top:25px;padding:25px;display:grid;gap:17px}
+.portal-blog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:20px 0 50px}
+.portal-blog-card{background:#fff;border:1px solid #d3e3d9;padding:35px;min-height:290px;display:flex;flex-direction:column;align-items:flex-start}
+.portal-blog-card h2{font:normal 32px/1.25 Georgia,serif;margin:23px 0 14px}
+.portal-blog-card h2 a{text-decoration:none;color:#32574d}
+.portal-blog-card p{font-size:15px;line-height:1.8;color:#6e8175}
+.portal-read{margin-top:auto;font-size:13px;color:#387a6d;text-decoration:underline}
+.portal-article{max-width:810px;margin:0 auto}.portal-article>.booking-step{display:block;margin-top:58px}
+.portal-article h1{font-size:clamp(43px,7vw,72px);line-height:1.15;letter-spacing:-.04em}
+.portal-article-lead{font-size:20px;line-height:1.8;color:#668075;border-bottom:1px solid #c9d9ce;padding-bottom:34px;margin-bottom:45px}
+.portal-article-body{font:normal 18px/1.9 Georgia,serif;color:#344b43}
+.portal-article-body h2{font:normal 35px/1.3 Georgia,serif;margin:55px 0 15px}
+.portal-article-body h3{font:normal 26px/1.35 Georgia,serif;margin:35px 0 12px}
+.portal-article-body p{margin-bottom:23px}
+.portal-article-footer{margin-top:60px;padding:30px 0;border-top:1px solid #bdd2c3;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.portal-blog-admin{display:grid;grid-template-columns:245px minmax(0,1fr);gap:23px;align-items:start}
+.portal-post-item{display:grid;gap:6px;width:100%;text-align:left;border:0;border-top:1px solid #dce8dd;background:transparent;padding:15px 2px;color:#35574d;cursor:pointer}
+.portal-post-item.active{background:#edf6ef}.portal-post-item small{color:#799083}
+.portal-full-field{margin:22px 0}.portal-editor-main{min-width:0}
+.portal-chat{display:grid;gap:8px;max-height:230px;overflow:auto}
+.portal-chat p{background:#eff6ef;margin:0;padding:11px 15px;font-size:13px}
+.portal-ideas{display:grid;gap:15px;margin-top:23px}.portal-ideas article{padding:15px 20px;border:1px solid #dae8dd}.portal-ideas h3{font:normal 22px Georgia,serif;margin:0 0 10px}.portal-ideas p{font-size:13px}
+@media(max-width:900px){.portal-metrics{grid-template-columns:repeat(2,1fr)}.portal-blog-admin{grid-template-columns:1fr}.portal-blog-sidebar{display:flex;gap:12px;flex-wrap:wrap}.portal-blog-sidebar .portal-post-item{width:180px}}
+@media(max-width:650px){.portal-page{padding:52px 0 78px}.portal-page h1{font-size:48px}.portal-panel,.portal-card{padding:20px}.portal-form-grid{grid-template-columns:1fr}.portal-setting{grid-template-columns:1fr;gap:8px}.portal-metrics{gap:7px}.portal-metrics>div{padding:15px}.portal-metrics strong{font-size:31px}.portal-entry{grid-template-columns:1fr}.portal-blog-grid{grid-template-columns:1fr}.portal-article-footer{display:block}.portal-tabs button{padding:8px 10px}.portal-toolbar{align-items:flex-start}.portal-blog-card{min-height:240px}}
+/* Blog presentation for rich, server-validated Tiptap documents. */
+.sm-blog-public-cover{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin:30px 0}
+.sm-blog-card-cover{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:6px;margin-bottom:18px}
+.sm-public-article{overflow-wrap:anywhere}
+.sm-public-article ul,.sm-public-article ol{padding-left:26px;margin:19px 0}.sm-public-article li{margin:7px 0;line-height:1.8}
+.sm-public-article blockquote{border-left:3px solid currentColor;padding:5px 20px;margin:30px 0;font-style:italic;opacity:.85}
+.sm-public-article hr{border:0;border-top:1px solid #d6d5d3;margin:32px 0}
+.sm-public-article mark{background:#f6eeb1}.sm-public-article pre{padding:20px;background:#eee;border-radius:6px;overflow:auto}
+.sm-public-article .sm-public-photo{margin:29px auto;max-width:100%}.sm-public-article .sm-public-photo img{display:block;width:100%;max-width:100%;height:auto}.sm-public-article .sm-public-photo figcaption{text-align:center;color:#848484;font-size:12px;margin-top:9px}
+.sm-public-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin:30px 0}.sm-public-embed{margin:30px 0}.sm-public-embed iframe{display:block;width:100%;border:0;min-height:290px;aspect-ratio:16/9;border-radius:8px}.sm-public-embed a{display:block;border:1px solid #ddd;padding:20px;border-radius:7px}
+.sm-public-signup{margin:34px 0;padding:27px;border:1px solid #d9d9d9;border-radius:10px}.sm-public-signup h3{margin-top:0}.sm-public-signup a{display:inline-block;padding:12px 21px;background:#292929;color:#fff;text-decoration:none;border-radius:5px}
+.sm-public-quiz{border:1px solid #dadada;border-radius:10px;padding:clamp(18px,3vw,32px);margin:35px 0;background:#fafafa}.sm-public-quiz h2{margin-top:0}.sm-public-quiz fieldset{border:0;border-top:1px solid #ddd;padding:22px 0;margin:18px 0}.sm-public-quiz legend{padding-top:15px;font-weight:700}.sm-public-quiz label{display:flex;align-items:center;gap:11px;padding:9px 0;cursor:pointer}.sm-public-quiz input[type=radio]{accent-color:#111;width:17px;height:17px}.sm-public-quiz button{border:0;background:#181818;color:#fff;padding:12px 18px;border-radius:6px;cursor:pointer}.sm-public-quiz button:disabled{opacity:.5}.sm-quiz-result{border-top:1px solid #ddd;padding-top:20px}.sm-quiz-result span{font-size:12px;color:#787878}.sm-quiz-result button{display:block;margin-top:20px}
+.sm-related-public{border-top:1px solid #ddd;margin-top:50px;padding-top:28px}.sm-related-public h2{font-size:22px}.sm-related-public>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.sm-related-public a{border:1px solid #ddd;border-radius:6px;overflow:hidden;text-decoration:none}.sm-related-public a img{width:100%;aspect-ratio:16/9;object-fit:cover}.sm-related-public a span{display:block;padding:14px}.sm-related-public a strong,.sm-related-public a small{display:block}.sm-related-public a strong{font-size:14px}.sm-related-public a small{font-size:11px;color:#777;margin-top:6px;line-height:1.5}
+@media(max-width:680px){.sm-public-columns{grid-template-columns:1fr;gap:15px}.sm-related-public>div{grid-template-columns:1fr}}

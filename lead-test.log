@@ -1,0 +1,10 @@
+(node:6092) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///mnt/data/kiss-zoltan-v6-demo/pages/api/lead.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /mnt/data/kiss-zoltan-v6-demo/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Lead email provider status 500
+Stored lead requires owner notification retry 28e2543c-de9a-4c88-916f-5aa5cf77676a
+Lead email provider status 500
+Stored lead visitor receipt not sent 28e2543c-de9a-4c88-916f-5aa5cf77676a
+Supabase lead storage failure 503 MOCK_UNAVAILABLE
+PASS: encryption, malformed request, stored lead, idempotence, mail failure, DB failure, origin, throttling, admin status/retry/delete

@@ -1,0 +1,68 @@
+/* V7 — restore the richer, useful interaction patterns of the original concept,
+   without importing fictional agency results or misleading district averages. */
+.kz-valuation-revival .valuation-layout{grid-template-columns:minmax(0,1fr) minmax(450px,565px);gap:clamp(32px,5vw,96px)}
+.kz-valuation-revival .valuation-card{min-height:580px}
+.kz-valuation-revival .valuation-copy{padding-top:20px}
+.kz-valuation-revival .valuation-copy h2{font-size:clamp(47px,5vw,77px)}
+.kz-valuation-revival .valuation-copy>p{line-height:1.75}
+.kz-valuation-revival .valuation-points{margin:30px 0;gap:14px}
+.kz-valuation-revival .valuation-note{border:1px solid #ffffff31;padding:17px 19px;border-radius:11px;max-width:520px}
+.kz-valuation-revival .valuation-note span:last-child{font-size:13px;line-height:1.65}
+.kz-value-sample{margin-top:24px;border-left:2px solid var(--ochre);padding:3px 0 4px 19px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.kz-value-sample>span{font-size:10px;letter-spacing:.13em;color:#c9d3c8;font-weight:800}
+.kz-value-sample>strong{font:650 23px var(--display);letter-spacing:-.04em}
+.kz-value-sample>small{font-size:12px;color:#b9c7c3;line-height:1.65}
+.kz-value-sample>a{display:inline-flex;gap:8px;align-items:center;margin-top:7px;text-decoration:underline;text-underline-offset:5px;font-size:13px;font-weight:800}
+.kz-wizard-lead{font-size:14px;line-height:1.65;color:var(--muted);margin:4px 0 20px}
+.kz-reference-list{display:flex;flex-direction:column;gap:8px;margin-bottom:17px}
+.kz-reference-item{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;padding:13px 12px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:9px;transition:border-color .2s,background .2s}
+.kz-reference-item:hover{border-color:var(--ochre)}
+.kz-reference-item.selected{background:#fff8e9;border-color:#c68a26;box-shadow:0 0 0 1px #c68a2612}
+.kz-reference-item .kz-ref-dot{width:11px;height:11px;border-radius:50%;border:2px solid #a8b7b2}
+.kz-reference-item.selected .kz-ref-dot{background:var(--ochre);border-color:#bc8226;box-shadow:0 0 0 3px #e8ad3d3b}
+.kz-reference-item span:nth-child(2){min-width:0}
+.kz-reference-item strong{font-size:13px;line-height:1.2;letter-spacing:-.01em;display:block}
+.kz-reference-item small{font-size:11px;color:#74827a;margin-top:5px;display:block}
+.kz-reference-item>b{font-size:12px;white-space:nowrap}
+.kz-assumption{font-size:11px;line-height:1.6;color:#62766e;margin:14px 0 22px}
+.kz-numeric-input{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-top:9px}
+.kz-numeric-input label{font-size:12px;color:#62766e}
+.kz-numeric-input input{width:115px;max-width:45%;height:40px;padding:7px 11px;border:1px solid #cbd3cb;background:white;border-radius:7px}
+.kz-valuation-revival .valuation-card .chip-group{margin-bottom:12px}
+.kz-valuation-revival .estimate-result{padding:25px 20px}
+.kz-valuation-revival .estimate-result strong{font-size:clamp(22px,2.15vw,30px);white-space:normal}
+.kz-valuation-revival .estimate-result>div{font-size:9px;line-height:1.5}
+.kz-warning-state{padding:22px;background:#f8ede3;border:1px solid #edd1bd;border-radius:9px;line-height:1.55}
+.kz-warning-state strong{display:block;font-size:17px;margin-bottom:8px}
+.kz-warning-state p{margin:0;color:#725747;font-size:13px}
+.kz-valuation-revival .estimate-details{font-size:12px}
+.kz-result-ctas{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+.kz-atlas-section{background:var(--limestone)}
+.kz-atlas-section .map-dashboard{grid-template-columns:minmax(0,1fr) 355px;gap:17px}
+.kz-atlas-section .map-main{border-radius:var(--radius-card,10px);padding:30px}
+.kz-atlas-section .map-panel{border-radius:var(--radius-card,10px)}
+.kz-atlas-stat{font-size:12px;color:var(--muted);font-weight:700}
+.kz-atlas-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:24px 0}
+.kz-atlas-tile{background:#f2eee7;border:1px solid #d5d8d1;border-radius:10px;text-align:left;min-height:122px;padding:19px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;transition:background .18s,transform .18s,border-color .18s}
+.kz-atlas-tile:hover{transform:translateY(-2px);border-color:var(--ink)}
+.kz-atlas-tile.active{background:var(--ink);color:white;border-color:var(--ink)}
+.kz-atlas-location{color:#688079;font-size:10px;letter-spacing:.07em;font-weight:800}
+.kz-atlas-tile.active .kz-atlas-location{color:#c9d2c7}
+.kz-atlas-tile strong{font:650 21px/1.1 var(--display);letter-spacing:-.045em}
+.kz-atlas-tile small{margin-top:auto;font-size:12px;font-weight:750}
+.kz-atlas-section .map-footnote{line-height:1.5;margin-top:17px}
+.kz-atlas-type{font-size:clamp(32px,3.2vw,53px)!important;letter-spacing:-.06em;margin:22px 0 12px!important}
+.kz-atlas-specific{padding:18px 0 24px;border-top:1px solid #ffffff34;margin-top:auto}
+.kz-atlas-specific strong{font-size:16px;line-height:1.4;display:block}
+.kz-atlas-specific p{font-size:12px;color:#b9ccc2;margin:8px 0}
+.kz-atlas-specific>span{font-size:12px;line-height:1.5;color:#d8b36f;display:block}
+.kz-atlas-section .map-panel .btn{margin-top:5px}
+.kz-proceeds-calculator .calc-slider{margin-top:22px}
+.kz-proceeds-calculator .net-intro>p{max-width:500px}
+.kz-proceeds-calculator .sheet-total{margin-top:23px}
+.kz-proceeds-calculator .sheet-total strong{font-size:clamp(26px,3vw,36px)}
+.kz-proceeds-calculator .net-sheet p{line-height:1.55}
+@media(max-width:1050px){.kz-valuation-revival .valuation-layout{grid-template-columns:1fr;gap:30px}.kz-valuation-revival .valuation-copy{padding:0}.kz-valuation-revival .valuation-copy>p{max-width:730px}.kz-atlas-section .map-dashboard{grid-template-columns:minmax(0,1fr) 315px}}
+@media(max-width:760px){.kz-valuation-revival .valuation-copy h2{font-size:clamp(42px,9vw,60px)}.kz-valuation-revival .valuation-card{padding:26px 20px;min-height:0}.kz-valuation-revival .valuation-note{max-width:none}.kz-reference-item{grid-template-columns:12px minmax(0,1fr);gap:10px}.kz-reference-item>b{grid-column:2;font-size:11px;margin-top:-5px}.kz-atlas-section .map-dashboard{grid-template-columns:1fr}.kz-atlas-section .map-main{padding:20px}.kz-atlas-list{gap:9px}.kz-atlas-tile{min-height:124px;padding:14px}.kz-atlas-tile strong{font-size:16px}.kz-atlas-section .map-panel{min-height:0}.kz-valuation-revival .valuation-card h3{font-size:32px}.kz-proceeds-calculator .sheet-total strong{font-size:28px}}
+@media(max-width:390px){.kz-atlas-list{grid-template-columns:1fr}.kz-atlas-tile{min-height:92px}.kz-reference-item strong{font-size:12px}.kz-valuation-revival .estimate-result strong{font-size:23px}}
+@media(prefers-reduced-motion:reduce){.kz-atlas-tile,.kz-reference-item{transition:none}}

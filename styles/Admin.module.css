@@ -1,0 +1,11 @@
+.main{background:#f1eee7;color:#0c2a30;min-height:100vh;font-family:inherit;padding:64px 24px}
+.wrap{max-width:1120px;margin:0 auto}
+.head{display:flex;align-items:flex-start;justify-content:space-between;gap:28px;border-bottom:1px solid #ccc5b6;padding-bottom:28px}
+.head h1{font-size:clamp(32px,4vw,54px);letter-spacing:-.04em;margin:8px 0}.head p{margin:0;max-width:580px;line-height:1.6;color:#536365}.head a{color:#0c2a30}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;color:#65716d}
+.summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:30px 0}
+.summary>div{background:#faf9f6;padding:20px;border:1px solid #e2ddd3;border-radius:10px}.summary small{display:block;color:#69716f}.summary strong{display:block;font-size:30px;margin-top:8px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:20px}
+.toolbar label,.leadActions label{display:flex;align-items:center;gap:9px;font-size:13px}.toolbar select,.leadActions select{font:inherit;padding:9px;background:white;color:#0c2a30;border:1px solid #d4d0c9;border-radius:6px}
+.list{display:grid;gap:12px}.lead{background:#faf9f6;border:1px solid #e4e0d8;border-radius:10px;padding:22px}.leadTop,.leadActions{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.lead h2{font-size:23px;margin:8px 0}.lead p{margin:5px 0 0;color:#536365;line-height:1.5}.leadActions{border-top:1px solid #e4e0d8;padding-top:18px;margin-top:18px}.toggle{border:1px solid #c6cdc8;background:transparent;color:#0c2a30;border-radius:6px;padding:10px 15px;cursor:pointer;font:inherit;font-size:13px}.toggle:disabled{opacity:.5;cursor:wait}.ok{color:#346a4a;font-size:13px}.bad,.error{color:#aa4335;font-size:13px}.error{padding:14px 18px;background:#fff4f0}.details{border-top:1px solid #e4e0d8;margin-top:18px;padding-top:18px;display:grid;gap:16px}.details strong{font-size:13px}.details a{color:#0c2a30}.message{white-space:pre-wrap;overflow-wrap:anywhere}.foot{font-size:12px;color:#69716f;margin-top:24px}
+@media(max-width:750px){.main{padding:30px 14px}.head{display:block}.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.summary>div:last-child{grid-column:span 2}.lead{padding:16px}.toolbar{align-items:flex-start;flex-direction:column}}

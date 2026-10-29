@@ -1,0 +1,4 @@
+import React from 'react';
+import Link from 'next/link';
+export function LeadConsent({checked,onChange}){return <label className="kz-consent"><input type="checkbox" required checked={checked} onChange={e=>onChange(e.target.checked)}/><span>A megkereséshez megadott adataim kezeléséről szóló <Link href="/adatkezeles">tájékoztatást</Link> megismertem.</span></label>}
+export function LeadStatus({loading,sent,error,delayed=false,fallbackHref}){return <div className="kz-lead-state" aria-live="polite">{sent&&<p className="kz-lead-ok" role="status">Megkeresését biztonságosan rögzítettük. Az egyeztetés részleteiről külön visszajelzést kap. Ez nem időpont-visszaigazolás.{delayed&&<span> Az értesítés kézbesítése késik; sürgős esetben telefonon is keressen bennünket.</span>}</p>}{error&&<p className="kz-lead-error" role="alert">{error} {fallbackHref&&<a href={fallbackHref}>Kapcsolatfelvétel e-mailben</a>}</p>}{loading&&<p role="status">Üzenet továbbítása…</p>}</div>}

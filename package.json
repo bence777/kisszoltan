@@ -1,0 +1,33 @@
+{
+  "name": "kiss-zoltan-premium-ingatlan",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "audit:properties": "node scripts/audit-properties.mjs",
+    "test:leads": "node scripts/test-lead-api.mjs",
+    "qa:v111": "node scripts/qa-v111.mjs",
+    "test:studio": "node scripts/test-studio-integrity.mjs",
+    "env:check": "node scripts/check-env.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0",
+    "@tiptap/core": "^3.8.0",
+    "@tiptap/extension-image": "^3.8.0",
+    "@tiptap/extension-placeholder": "^3.8.0",
+    "@tiptap/react": "^3.8.0",
+    "@tiptap/starter-kit": "^3.8.0",
+    "next": "^16.3.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "typescript": "7.0.2"
+  }
+}

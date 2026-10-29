@@ -1,0 +1,37 @@
+{
+  "source": "https://kisszoltan.com/ingatlanjaim",
+  "verified_at": "2026-10-29",
+  "meaning": "The six image URLs and property listing pages were verified from the live public listings; each property still requires owner approval and final media licensing confirmation before going live.",
+  "photos": [
+    {
+      "code": "KZ-001",
+      "source_page": "https://kisszoltan.com/ingatlanjaim/budapest-ii-kerulet",
+      "url": "https://kisszoltan.com/images/DSCF1568.jpg"
+    },
+    {
+      "code": "KZ-002",
+      "source_page": "https://kisszoltan.com/ingatlanjaim/budapest-ii-kerulet-2",
+      "url": "https://kisszoltan.com/images/DSCF1545.jpg"
+    },
+    {
+      "code": "KZ-003",
+      "source_page": "https://kisszoltan.com/ingatlanjaim/xxi-kerulet-feherrozsa-utca",
+      "url": "https://kisszoltan.com/images/11_fotjpg.jpg"
+    },
+    {
+      "code": "KZ-004",
+      "source_page": "https://kisszoltan.com/ingatlanjaim/ii-kerulet-himes-utca",
+      "url": "https://kisszoltan.com/images/29Hmes_utca.jpg"
+    },
+    {
+      "code": "KZ-005",
+      "source_page": "https://kisszoltan.com/ingatlanjaim/rozmaring-utca-biatorbagy",
+      "url": "https://kisszoltan.com/images/Bia1.jpg"
+    },
+    {
+      "code": "KZ-006",
+      "source_page": "https://kisszoltan.com/ingatlanjaim/csomad-zahora-utca",
+      "url": "https://kisszoltan.com/images/2profiljpg.jpg"
+    }
+  ]
+}

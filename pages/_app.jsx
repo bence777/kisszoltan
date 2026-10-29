@@ -1,0 +1,22 @@
+import '../styles/globals.css';
+import '../styles/premium-refinement.css';
+import '../styles/property-experience.css';
+import '../styles/editorial.css';
+import '../styles/demo-polish.css';
+import '../styles/interaction-restoration.css';
+import '../styles/edition-v8.css';
+import '../styles/edition-v9.css';
+import '../styles/seller-v10.css';
+import '../styles/editorial-v11.css';
+import '../styles/decision-v111.css';
+import '../styles/nora-admin.css';
+import '../styles/nora-admin-studio-v2.css';
+import '../styles/nora-portal.css';
+import '../styles/kz-studio.css';
+import '../styles/kz-admin-v13.css';
+import {useEffect} from 'react';
+import {useRouter} from 'next/router';
+import {sendAnalytics} from '../lib/analytics-client';
+import {AppProvider} from '../components/AppContext';
+import {GlobalUI} from '../components/GlobalUI';
+export default function App({Component,pageProps}){const router=useRouter();useEffect(()=>{const go=url=>{try{sendAnalytics('page_view',{path:new URL(url,location.origin).pathname})}catch{}};go(router.asPath);router.events.on('routeChangeComplete',go);return()=>router.events.off('routeChangeComplete',go);},[router.events]);return <AppProvider><Component {...pageProps}/>{!router.pathname.startsWith('/admin')&&!router.pathname.startsWith('/auth')&&!Component.noGlobalUI&&<GlobalUI/>}</AppProvider>}
